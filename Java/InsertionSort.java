@@ -1,4 +1,3 @@
-package Algortithms.Sorting;
 
 import java.util.ArrayList;
 
