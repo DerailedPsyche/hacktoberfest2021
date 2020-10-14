@@ -1,6 +1,7 @@
 # hacktoberfest2020
 
 BASIC python and C programs are welcome
+Create a folder for different programming languages
 
 README.md
 
