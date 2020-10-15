@@ -1,0 +1,9 @@
+a = ['One', 'Two', 'Three']
+b = [1, 2, 3]
+dic = {} 
+for key in a: 
+    for value in b: 
+        dic[key] = value 
+        b.remove(value) 
+        break  
+print ("c = " +  str(dic)) 
