@@ -1,11 +1,4 @@
-# hacktoberfest2020
-
-BASIC python and C programs are welcome
-Create a folder for different programming languages
-
-README.md
-
-
+# Hacktoberfest2020
 Hacktoberfest 2020 - Expert
 This is a intermediate-level project to help you get started with your hacktoberfest. If you don't know where to start, feel free to watch the videos linked below, and read the contribution rules. Happy hacking <3 !!
 
