@@ -1,0 +1,87 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head=None
+    
+    def printlist(self):
+        ptr=self.head
+        while ptr:
+            print(ptr.data,end=' ')
+            ptr=ptr.next
+    def append(self,data):
+        newnode=Node(data)
+        if self.head is None:
+            self.head=newnode
+            return
+        
+        ptr2=self.head
+        while ptr2.next:
+            ptr2=ptr2.next
+        ptr2.next=newnode
+        
+    def sortlist(self):
+        ptr3=self.head
+        ptr4=None
+        if self.head==None:
+            return
+        else:
+            while ptr3!=None:
+                ptr4=ptr3.next
+                while ptr4!=None:
+                    if(ptr3.data>ptr4.data):
+                        temp=ptr3.data
+                        ptr3.data=ptr4.data
+                        ptr4.data=temp
+                    ptr4=ptr4.next
+                ptr3=ptr3.next
+
+def mergelist(head1,head2):
+    s= None
+    if head1==None:
+        return head2
+    elif head2==None:
+        return head1
+    
+    if head1.data<=head2.data:
+        s=head1
+        s.next=mergelist(head1.next,head2)
+    else:
+        s=head2
+        s.next=mergelist(head1,head2.next)
+    return s
+                 
+            
+            
+            
+            
+list1=SinglyLinkedList()
+n=int(input("Number of elements in List 1:"))
+for i in range(n):
+    data=int(input("Enter element for List 1:"))
+    list1.append(data)
+print("\n")
+list2=SinglyLinkedList()
+j=int(input("Number of elements List 2:"))
+for i in range(j):
+    value=int(input("Enter element for List 2:"))
+    list2.append(value)
+
+list1.sortlist()
+list2.sortlist()
+print("\n")
+print("Sorted Linked List 1 is:", end=' ')
+list1.printlist()
+print("\n")
+print("Sorted Linked List 2 is:", end=' ')
+list2.printlist()
+
+list3=SinglyLinkedList()
+list3.head=mergelist(list1.head,list2.head)
+
+print("\n")
+print("Sorted Merge Linked List is:", end=' ')
+list3.printlist()
