@@ -30,7 +30,7 @@ public class SubArraySumEqualsK {
         SubArraySumEqualsK sum = new SubArraySumEqualsK();
         int[] nums= {1,1,1};
         int k = 2;
-        System.out.println("# of subarray that sum up to k " + sum.subarraySum(nums, k));
+        System.out.println("# of subarray that sum up to k is:" + sum.subarraySum(nums, k));
 
 
         
