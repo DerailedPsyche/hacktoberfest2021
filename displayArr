@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+#include <algorithm>
+// g++ hello.cpp && ./a.out
+using namespace std;
+void displayArr(int arr[], int ind, int n) {
+	if(ind == n) {
+		return;
+	}
+	displayArr(arr, ind+1, n);
+	cout << arr[ind] << endl;
+}	
+
+int main () {
+	int n;
+	cin >> n;
+	int arr[n];
+	for(int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	displayArr(arr, 0, n);
+	return 0;
+}
