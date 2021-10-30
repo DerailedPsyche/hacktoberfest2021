@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define MAX 500
 
-int acha_tamanho(char *string)
+int find_tam(char *string)
 {
 	int per = 0;
 	
@@ -12,7 +12,7 @@ int acha_tamanho(char *string)
 	}
 	return per;
 }
-int ehpalindromo(char *string, int index, int ini)
+int palindrome_check(char *string, int index, int ini)
 {
 	if (index >= 0)
 	{
@@ -22,7 +22,7 @@ int ehpalindromo(char *string, int index, int ini)
 		{
 			int m = index - 1;
 			int n = ini + 1; 
-			return (ehpalindromo(string, m, n));
+			return (palindrome_check(string, m, n));
 		}
 	}
 	return 1;
@@ -30,11 +30,11 @@ int ehpalindromo(char *string, int index, int ini)
 }
 int main()
 {
-	char *leitura;
-	leitura = malloc(MAX*sizeof(char));
-	scanf("%s",leitura);
-	int tam = acha_tamanho(leitura);
-	int tr = ehpalindromo(leitura,tam-1,0);
+	char *reader;
+	reader = malloc(MAX*sizeof(char));
+	scanf("%s",reader);
+	int tam = find_tam(reader);
+	int tr = palindrome_check(reader,tam-1,0);
 	if (tr)
 		printf("PALINDROME\n");
 	else
